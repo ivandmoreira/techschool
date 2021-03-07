@@ -1,0 +1,57 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+    xmlns:sec="http://www.thymeleaf.org">
+<head></head>
+
+<body>
+
+<table>
+<th:block th:each= "usuario : ${listaDeUsuarios}">
+<tr >
+    <td th:text="${usuario.nome}" />
+</tr>
+</th:block>
+</table>
+
+<form action="/cadastro" method="post" >
+<fieldset>
+<legend>Cadastro de usuario</legend>
+<label>Nome: </label> <input type="text" name="nome">
+<br>
+<label>Email: </label> <input type="email" name="email">
+<br>
+<label>Sexo: </label> 
+	<select id="cars" name="sexo">
+  <option value="M">Masculino</option>
+  <option value="F">Feminino</option>
+</select>
+<br>
+<label>Logradouro: </label> <input type="text" name="logradouro">
+<br>
+<label>Numero: </label> <input type="text" name="numero">
+<br>
+<label>Bairro: </label> <input type="text" name="bairro">
+<br>
+
+<button type="submit">Salvar</button>
+<br>
+ 
+
+
+
+
+</fieldset>
+
+
+
+
+
+
+
+</form>
+
+
+</body>
+</html>
