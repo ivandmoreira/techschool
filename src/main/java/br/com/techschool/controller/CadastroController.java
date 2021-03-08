@@ -42,7 +42,6 @@ public class CadastroController {
 		Usuario usuario = new Usuario();
 		usuario.setNome(cadastroDto.getNome());
 		usuario.setEmail(cadastroDto.getEmail());
-		usuario.setSexo(cadastroDto.getSexo());
 		
 		Endereco endereco = new Endereco();
 		endereco.setLogradouro(cadastroDto.getLogradouro());
@@ -52,10 +51,7 @@ public class CadastroController {
 		usuarioRepository.save(usuario);
 		endereco.setUsuario(usuario);
 		enderecoRepository.save(endereco);
-		
 
-		
-		
 		
 		return "/cadastro";
 	}
